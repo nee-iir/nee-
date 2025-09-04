@@ -1,0 +1,142 @@
+/* === รีเซ็ตพื้นฐาน === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f5c0e2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  overflow-x: hidden; /* เลื่อนแนวตั้งได้ แต่ไม่เลื่อนแนวนอน */
+  position: relative;
+}
+
+/* === กล่องโปรไฟล์ === */
+.container {
+  text-align: center;
+  max-width: 700px;   /* ✅ ปรับให้ปานกลาง */
+  width: 100%;
+  animation: fadeInBounce 1.2s ease;
+  position: relative;
+}
+
+.title {
+  font-size: 20px;
+  color: #000;
+  text-shadow: 3px 2px #fff;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+/* รูปโปรไฟล์ */
+.profile-image img {
+  width: 200px;
+  border-radius: 25px;
+  border: 5px solid #ffb3e6;
+}
+
+/* รายละเอียด */
+.profile-details {
+  text-align: left;
+  color: #ff66cc;
+  font-size: 16px;
+  max-width: 550px;  /* ✅ ไม่ให้กว้างเกิน */
+}
+
+.profile-details p {
+  margin-bottom: 10px;
+}
+
+.home-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-family: 'Kanit', sans-serif;
+  color: #333;
+  background-color: #fefefe;
+  border: 2px solid #ff66cc; /* ✅ กรอบสีชมพู */
+  border-radius: 12px;       /* มุมโค้ง */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15); /* เงานุ่มๆ */
+}
+
+.home-button:hover {
+  background-color: #ff66cc;  /* พื้นหลังชมพูเมื่อ hover */
+  color: #fff;                /* ตัวอักษรขาว */
+  transform: scale(1.05);     /* ขยายเล็กน้อย */
+}
+
+
+
+/* เอฟเฟกต์ตอนเข้า */
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(15px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 160px;
+  }
+
+  .profile-details {
+    text-align: center;
+    font-size: 15px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .profile-details {
+    font-size: 14px;
+  }
+
+  .home-button {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+
+  .profile-image img {
+    width: 140px;
+  }
+}

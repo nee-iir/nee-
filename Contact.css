@@ -1,0 +1,86 @@
+/* ฟอนต์และพื้นหลัง */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: #d56edf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* คลุมทั้งหมด */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    gap: 30px;
+}
+
+/* ✅ การ์ดเรียงแนวนอน */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* การ์ด */
+.card {
+    background-color: rgb(220, 173, 247);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ไอคอน */
+.icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+    color: #000000;
+    background-color: #f5e8e8;
+    border: 2px solid #ba66ff; /* ✅ กรอบสีชมพู */
+    border-radius: 12px;       /* มุมโค้ง */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.15); /* เงานุ่มๆ */
+  }
+  
+  .home-button:hover {
+    background-color: #f18ef5;  /* พื้นหลังชมพูเมื่อ hover */
+    color: #000000;                /* ตัวอักษรขาว */
+    transform: scale(1.05);     /* ขยายเล็กน้อย */
+  }
+  
+
+/* ✅ Responsive สำหรับหน้าจอเล็ก */
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .back-button {
+        width: auto;
+    }
+}

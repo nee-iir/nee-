@@ -1,0 +1,123 @@
+/* รีเซ็ต */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f9d6f4, #e0b3ff);
+  font-family: 'Kanit', sans-serif;
+  padding: 20px;
+}
+
+/* คอนเทนเนอร์หลัก */
+.container {
+  text-align: center;
+  animation: bounce-in 1s ease-out both;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* หัวข้อ */
+.title {
+  display: inline-block;
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 28px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* การ์ดโรงเรียน */
+.school-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 30px auto;
+  gap: 20px;
+  max-width: 700px;
+  animation: fade-in-up 1s ease both;
+}
+
+.school-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.school-card p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* เอฟเฟกต์เด้งเข้า */
+@keyframes bounce-in {
+  0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+  60% { transform: scale(1.1) translateY(-10px); opacity: 1; }
+  80% { transform: scale(0.95) translateY(5px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* เอฟเฟกต์เลื่อนขึ้น */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .school-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .school-card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .school-card p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+    padding: 8px 16px;
+  }
+
+  .school-card p {
+    font-size: 20px;
+  }
+}
+.home-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-family: 'Kanit', sans-serif;
+  color: #000000;
+  background-color: #f5e8e8;
+  border: 2px solid #ba66ff; /* ✅ กรอบสีชมพู */
+  border-radius: 12px;       /* มุมโค้ง */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15); /* เงานุ่มๆ */
+}
+
+.home-button:hover {
+  background-color: #f18ef5;  /* พื้นหลังชมพูเมื่อ hover */
+  color: #000000;                /* ตัวอักษรขาว */
+  transform: scale(1.05);     /* ขยายเล็กน้อย */
+}
